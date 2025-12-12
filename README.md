@@ -11,4 +11,6 @@ Above is the challenge structure or timetable 👍👆
 
 **Watch on YouTube :** https://www.youtube.com/playlist?list=PLxJyVVzCg8iPquj_C0AV6tkXjtuc6saJ9
 
+**JOIN Whatsapp Community** https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ
+
 **JOIN Discord Community to Discuss:** https://discord.gg/HHUJDEepjS
