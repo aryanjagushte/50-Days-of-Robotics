@@ -251,7 +251,7 @@ In the coming days, you'll learn:
 
 | Platform | Link |
 |----------|------|
-| **Whatsapp** | [[https://discord.gg/vq2YS99hDn](https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ) |
+| **Whatsapp** | [https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ](https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ) |
 | **LinkedIn** | [https://linkedin.com/in/aryan-jagushte-07385321b](https://linkedin.com/in/aryan-jagushte-07385321b) |
 | **GitHub** | [https://github.com/aryanjagushte/50-Days-of-Robotics](https://github.com/aryanjagushte/50-Days-of-Robotics) |
 
