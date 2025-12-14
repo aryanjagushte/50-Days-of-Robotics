@@ -1,16 +1,31 @@
 # 50 days of robotics
 
-**Introduction**
+A comprehensive robotics learning journey covering essential concepts from basics to advanced ROS2 applications.
 
-I am an Automation and Robotics undergraduate, who found important concepts in robotics while exploring the engineering. I am starting a 50 days challenge which will save a lot of time of students and enthusiasts interested in robotics by providing a fixed path. This is a package of experience of mine as well as what I learnt from different people, courses and off course my college. ALL THE 50 DAYS ARE ALSO AVAILABLE as VIDEOS ON YOUTUBE (Channel : Aryan Jagushte) as a playlist.
+## 📚 Course Overview
+- **Duration:** 50 days of structured learning
+- **Target Audience:** Beginners to Intermediate in Robotics
+- **Format:** Video tutorials + Hands-on Code + Topmate Courses
+- **Topics Covered:** ROS2, SLAM, Navigation, Computer Vision, Kinematics, etc.
 
-**Chanllenge Your Limits!**
+## 🎯 Learning Outcomes
+By the end of this course, you will:
+- Master ROS2 fundamentals
+- Implement SLAM algorithms
+- Build autonomous navigation systems
+- Work with real-world robotics application
+
+## 📖 Learning Resources
+
+- **Interactive Topmate Course WATCH NOW:** https://topmate.io/aryanjagushte/1818745
+
+- **YouTube Playlist:** https://www.youtube.com/playlist?list=PLxJyVVzCg8iPquj_C0AV6tkXjtuc6saJ9
+
+- **Code & Packages:** Available in respective Day folders
+
+- **Documentation:** Day-by-day breakdown below
  https://docs.google.com/spreadsheets/d/1MwCHF1QBaZkTWITiNj5r64aQ59KKuCln3vZ7aOC_-N0/edit?usp=sharing
 
 Above is the challenge structure or timetable 👍👆
 
-**Watch on YouTube :** https://www.youtube.com/playlist?list=PLxJyVVzCg8iPquj_C0AV6tkXjtuc6saJ9
-
 **JOIN Whatsapp Community** https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ
-
-**JOIN Discord Community to Discuss:** https://discord.gg/HHUJDEepjS
