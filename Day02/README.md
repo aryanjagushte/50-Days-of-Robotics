@@ -194,9 +194,6 @@ In the coming days, you'll learn:
 
 ### Connect & Learn Together
 
-| Platform | Link |
-|----------|------|
-
 | **LinkedIn** | [https://linkedin.com/in/aryan-jagushte-07385321b](https://linkedin.com/in/aryan-jagushte-07385321b) |
 
 ### Tips for Success
