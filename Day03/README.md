@@ -251,8 +251,7 @@ In the coming days, you'll learn:
 
 | Platform | Link |
 |----------|------|
-| **Discord** | [https://discord.gg/vq2YS99hDn](https://discord.gg/vq2YS99hDn) |
-| **Telegram** | [https://t.me/robotrycommunity](https://t.me/robotrycommunity) |
+| **Whatsapp** | [[https://discord.gg/vq2YS99hDn](https://chat.whatsapp.com/EZktubsqxvCIGFomiOd0dZ) |
 | **LinkedIn** | [https://linkedin.com/in/aryan-jagushte-07385321b](https://linkedin.com/in/aryan-jagushte-07385321b) |
 | **GitHub** | [https://github.com/aryanjagushte/50-Days-of-Robotics](https://github.com/aryanjagushte/50-Days-of-Robotics) |
 
