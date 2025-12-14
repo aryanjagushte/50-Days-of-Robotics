@@ -1,7 +1,3 @@
-# Day 6: Python Fundamentals for Robotics - Variables, Conditionals, and Loops
-
----
-
 ## Overview
 
 Day 6 marks the beginning of the programming phase of the 50-day challenge. Python is the primary programming language for robotics engineering because of its simplicity, versatility, and powerful libraries. This day focuses on essential Python concepts that are crucial for controlling robots and building robotics applications. We'll explore three fundamental concepts: variables and data types, conditional statements, and loops. These concepts form the foundation for all robotics programming that follows.
