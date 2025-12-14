@@ -210,19 +210,6 @@ In the coming days, you'll learn:
 ---
 
 
-## Timestamps from Video
-
-| Time | Topic |
-|------|-------|
-| 0:00 | Introduction |
-| 0:25 | Links in Robotics |
-| 1:17 | Joints in Robotics |
-| 1:54 | Sensors in Robotics |
-| 3:00 | Actuators in Robotics |
-| 3:32 | Conclusion |
-
----
-
 ## Remember
 
 *"Grow, learn, and explore together!"* — Aryan Jagushte
