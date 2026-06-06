@@ -17,7 +17,7 @@ By the end of this course, you will:
 
 ## 📖 Learning Resources
 
-- **Interactive Topmate Course WATCH NOW:** https://topmate.io/aryanjagushte/1818745
+- **FREE CERTIFICATE ROBOTICS & ROS2 Course (50 Days of Robotics in Course Format):** https://robotry.in/course/robotics-and-ros2-easy-guide-free/
 
 - **YouTube Playlist:** https://www.youtube.com/playlist?list=PLxJyVVzCg8iPquj_C0AV6tkXjtuc6saJ9
 
