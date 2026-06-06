@@ -5,7 +5,7 @@ A comprehensive robotics learning journey covering essential concepts from basic
 ## 📚 Course Overview
 - **Duration:** 50 days of structured learning
 - **Target Audience:** Beginners to Intermediate in Robotics
-- **Format:** Video tutorials + Hands-on Code + Topmate Courses
+- **Format:** Video tutorials + Hands-on Code + robotry certificate
 - **Topics Covered:** ROS2, SLAM, Navigation, Computer Vision, Kinematics, etc.
 
 ## 🎯 Learning Outcomes
