@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ROS2 Button Teleop</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+  <style>
+    .control-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+    }
+    .dpad {
+      display: grid;
+      grid-template-columns: repeat(3, 90px);
+      grid-template-rows: repeat(3, 90px);
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .btn {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .btn:active {
+      background-color: #27ae60;
+      transform: scale(0.95);
+    }
+    .btn-stop {
+      background-color: #e74c3c;
+      font-size: 16px;
+    }
+    .btn-stop:active {
+      background-color: #c0392b;
+    }
+    .empty {
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .status-panel {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-container">
+    <h2>ROS2 Button Controller</h2>
+    
+    <div class="dpad">
+      <button class="btn empty"></button>
+      <button class="btn" id="forward">▲</button>
+      <button class="btn empty"></button>
+      
+      <button class="btn" id="left">◀</button>
+      <button class="btn btn-stop" id="stop">STOP</button>
+      <button class="btn" id="right">▶</button>
+      
+      <button class="btn empty"></button>
+      <button class="btn" id="backward">▼</button>
+      <button class="btn empty"></button>
+    </div>
+
+    <div class="status-panel">
+      <p>Target Topic: <strong>/cmd_vel</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // Connect to the rosbridge server websocket
+    var ros = new ROSLIB.Ros({
+      url: 'ws://add_your_ip:9090' // <-- Make sure to update this with your current laptop IP
+    });
+
+    ros.on('connection', function() {
+      console.log('Connected to websocket server.');
+    });
+    ros.on('error', function(error) {
+      console.log('Error connecting to websocket server: ', error);
+    });
+    ros.on('close', function() {
+      console.log('Connection to websocket server closed.');
+    });
+
+    // Define the cmd_vel publisher topic
+    var cmdVel = new ROSLIB.Topic({
+      ros: ros,
+      name: '/turtle1/cmd_vel',
+      messageType: 'geometry_msgs/msg/Twist'
+    });
+
+    // Base Twist structure
+    var twist = new ROSLIB.Message({
+      linear: { x: 0.0, y: 0.0, z: 0.0 },
+      angular: { x: 0.0, y: 0.0, z: 0.0 }
+    });
+
+    // Speed configurations
+    var linearSpeed = 0.5;  // Adjust forward/backward speed scale here (m/s)
+    var angularSpeed = 1.0; // Adjust turning speed scale here (rad/s)
+
+    function publishVelocity(linearX, angularZ) {
+      twist.linear.x = linearX;
+      twist.angular.z = angularZ;
+      cmdVel.publish(twist);
+    }
+
+    // Helper to attach press-and-hold functionality safely across Desktop & Mobile browsers
+    function attachTeleopEvents(elementId, linX, angZ) {
+      var element = document.getElementById(elementId);
+
+      // Trigger movement when pressed
+      element.addEventListener('mousedown', function() { publishVelocity(linX, angZ); });
+      element.addEventListener('touchstart', function(e) { 
+        e.preventDefault(); 
+        publishVelocity(linX, angZ); 
+      });
+
+      // Stop movement immediately on release
+      element.addEventListener('mouseup', function() { publishVelocity(0.0, 0.0); });
+      element.addEventListener('touchend', function(e) { 
+        e.preventDefault(); 
+        publishVelocity(0.0, 0.0); 
+      });
+    }
+
+    // Map the buttons to their directional components
+    attachTeleopEvents('forward', linearSpeed, 0.0);
+    attachTeleopEvents('backward', -linearSpeed, 0.0);
+    attachTeleopEvents('left', 0.0, angularSpeed);
+    attachTeleopEvents('right', 0.0, -angularSpeed);
+
+    // Hardcoded stop safe action
+    var stopBtn = document.getElementById('stop');
+    stopBtn.addEventListener('click', function() { publishVelocity(0.0, 0.0); });
+    stopBtn.addEventListener('touchstart', function(e) { 
+      e.preventDefault(); 
+      publishVelocity(0.0, 0.0); 
+    });
+  </script>
+</body>
+</html>
