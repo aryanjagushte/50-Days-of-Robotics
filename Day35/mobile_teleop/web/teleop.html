@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ROS2 Mobile Joystick</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.0/dist/nipplejs.min.js"></script>
+</head>
+<body>
+  <h2 style="text-align:center;">ROS2 Mobile Controller</h2>
+  <div id="joystick" style="width:500px;height:500px;margin:auto;"></div>
+
+  <script>
+    var ros = new ROSLIB.Ros({
+      url: 'ws://10.219.66.1:9090'  // <-- Change this
+    });
+
+    ros.on('connection', function() {
+      console.log('Connected to websocket server.');
+    });
+
+    ros.on('error', function(error) {
+      console.log('Error connecting to websocket server: ', error);
+    });
+
+    ros.on('close', function() {
+      console.log('Connection to websocket server closed.');
+    });
+
+    var cmdVel = new ROSLIB.Topic({
+      ros : ros,
+      name : '/cmd_vel',
+      messageType : 'geometry_msgs/msg/Twist'
+    });
+
+    var manager = nipplejs.create({
+      zone: document.getElementById('joystick'),
+      mode: 'static',
+      position: { left: '50%', top: '50%' },
+      color: 'blue'
+    });
+
+    var twist = new ROSLIB.Message({
+      linear: {x: 0.0, y: 0.0, z: 0.0},
+      angular: {x: 0.0, y: 0.0, z: 0.0}
+    });
+
+    manager.on('move', function (evt, data) {
+      var maxLinear = 0.5; // m/s
+      var maxAngular = 1.0; // rad/s
+      var lin = Math.sin(data.angle.radian) * data.distance / 50.0 * maxLinear;
+      var ang = -Math.cos(data.angle.radian) * data.distance / 50.0 * maxAngular;
+      twist.linear.x = lin;
+      twist.angular.z = ang;
+      cmdVel.publish(twist);
+    });
+
+    manager.on('end', function () {
+      twist.linear.x = 0.0;
+      twist.angular.z = 0.0;
+      cmdVel.publish(twist);
+    });
+  </script>
+</body>
+</html>
